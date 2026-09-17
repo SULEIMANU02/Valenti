@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_TUSCAN CHELSEA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4F1" />
+      <stop offset="100%" stop-color="#ECE3DB" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_TUSCAN CHELSEA)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#875128" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#875128" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#875128" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <path d="M140 180 L200 180 L210 260 L290 320 L290 350 L130 350 L130 230 Z" fill="#3D2D24" stroke="#A1683E" stroke-width="2"/><rect x="120" y="345" width="180" height="15" rx="3" fill="#1C140F" stroke="#A1683E" stroke-width="1.5"/><path d="M160 210 C160 190, 180 190, 180 210 L185 260 L155 260 Z" fill="#1A130F"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#875128" text-anchor="middle">TUSCAN CHELSEA</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; Vibram Goodyear Welted</text>
+</svg>

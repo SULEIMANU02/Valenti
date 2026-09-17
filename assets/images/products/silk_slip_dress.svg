@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_MULBERRY SILK DRESS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5F7" />
+      <stop offset="100%" stop-color="#EFE3EA" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_MULBERRY SILK DRESS)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#9B4573" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#9B4573" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#9B4573" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <line x1="160" y1="90" x2="170" y2="150" stroke="#B85D8D" stroke-width="1.5"/><line x1="240" y1="90" x2="230" y2="150" stroke="#B85D8D" stroke-width="1.5"/><path d="M165 150 C185 160, 215 160, 235 150 L250 250 C265 310, 290 390, 290 390 L110 390 C110 390, 135 310, 150 250 Z" fill="#3D2937" stroke="#B85D8D" stroke-width="2"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#9B4573" text-anchor="middle">MULBERRY SILK DRESS</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; Bias-Cut Fluid Satin</text>
+</svg>

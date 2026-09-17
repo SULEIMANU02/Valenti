@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_RAW SILK HAORI" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F7FA" />
+      <stop offset="100%" stop-color="#E2EAF2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_RAW SILK HAORI)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#406382" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#406382" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#406382" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <path d="M110 140 L200 110 L290 140 L275 370 L125 370 Z" fill="#28323E" stroke="#577C9E" stroke-width="2"/><path d="M150 125 L240 260" stroke="#577C9E" stroke-width="2"/><path d="M250 125 L180 220" stroke="#577C9E" stroke-width="2"/><path d="M60 170 L110 140 L120 280 L70 270 Z" fill="#28323E" stroke="#577C9E" stroke-width="1.5"/><path d="M340 170 L290 140 L280 280 L330 270 Z" fill="#28323E" stroke="#577C9E" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#406382" text-anchor="middle">RAW SILK HAORI</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; Avant-Garde Kimono Cut</text>
+</svg>

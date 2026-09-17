@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_STORM TRENCH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F6F2" />
+      <stop offset="100%" stop-color="#EAE6DC" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_STORM TRENCH)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#8C6836" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#8C6836" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#8C6836" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <path d="M130 150 L200 120 L270 150 L280 390 L120 390 Z" fill="#3D3833" stroke="#8C6836" stroke-width="2"/><path d="M110 260 L290 260" stroke="#8C6836" stroke-width="6"/><rect x="190" y="254" width="20" height="12" fill="none" stroke="#FAF8F5" stroke-width="2"/><path d="M165 140 L200 200 L235 140" stroke="#8C6836" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#8C6836" text-anchor="middle">STORM TRENCH</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; Water-Repellent Twill</text>
+</svg>

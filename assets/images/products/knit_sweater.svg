@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_CASHMERE KNIT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F6F2" />
+      <stop offset="100%" stop-color="#EAE3D5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_CASHMERE KNIT)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#8C6641" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#8C6641" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#8C6641" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <rect x="175" y="110" width="50" height="35" rx="5" fill="#3D352E" stroke="#A17D59" stroke-width="2"/><path d="M110 170 L175 145 L225 145 L290 170 L270 360 L130 360 Z" fill="#3D352E" stroke="#A17D59" stroke-width="2"/><line x1="160" y1="160" x2="160" y2="350" stroke="#A17D59" stroke-width="1" stroke-dasharray="2 3"/><line x1="180" y1="160" x2="180" y2="350" stroke="#A17D59" stroke-width="1" stroke-dasharray="2 3"/><line x1="220" y1="160" x2="220" y2="350" stroke="#A17D59" stroke-width="1" stroke-dasharray="2 3"/><line x1="240" y1="160" x2="240" y2="350" stroke="#A17D59" stroke-width="1" stroke-dasharray="2 3"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#8C6641" text-anchor="middle">CASHMERE KNIT</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; Pure Mongolian Rib</text>
+</svg>

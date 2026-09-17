@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_SUPIMA ESSENTIAL TEE" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6F7F9" />
+      <stop offset="100%" stop-color="#E8EBEF" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Canvas -->
+  <rect width="400" height="480" fill="url(#grad_SUPIMA ESSENTIAL TEE)" />
+  
+  <!-- Subtle Studio Circles -->
+  <circle cx="200" cy="240" r="140" fill="none" stroke="#475569" stroke-opacity="0.12" stroke-width="1" />
+  <circle cx="200" cy="240" r="180" fill="none" stroke="#475569" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="200" y1="40" x2="200" y2="440" stroke="#475569" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Product Silhouette Icon -->
+  <g>
+    <path d="M120 150 L170 125 C185 135, 215 135, 230 125 L280 150 L260 360 L140 360 Z" fill="#272A30" stroke="#64748B" stroke-width="2"/><path d="M120 150 L80 200 L110 220 L130 180" fill="#272A30" stroke="#64748B" stroke-width="1.5"/><path d="M280 150 L320 200 L290 220 L270 180" fill="#272A30" stroke="#64748B" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Brand Watermark & Nomenclature -->
+  <text x="200" y="415" font-family="'Cinzel', 'Playfair Display', serif, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#475569" text-anchor="middle">SUPIMA ESSENTIAL TEE</text>
+  <text x="200" y="435" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#57534E" text-anchor="middle">VALENTI ATELIER &bull; 240 GSM Staple Cotton</text>
+</svg>
