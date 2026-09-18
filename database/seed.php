@@ -36,7 +36,7 @@ function seedDatabase(PDO $pdo): void {
     ]);
 
     $userStmt->execute([
-        'Sulaiman A. Ahmad',
+        'Aisha Abdulsalam',
         'customer@valenti.com',
         $customerPassword,
         'customer',
@@ -269,7 +269,7 @@ function seedDatabase(PDO $pdo): void {
     $orderStmt->execute([
         $order1Number,
         2, // customer user id
-        'Sulaiman A. Ahmad',
+        'Aisha Abdulsalam',
         'customer@valenti.com',
         '+44 20 7946 0912',
         '14 Kensington High Street',
@@ -299,7 +299,7 @@ function seedDatabase(PDO $pdo): void {
     $orderStmt->execute([
         $order2Number,
         2,
-        'Sulaiman A. Ahmad',
+        'Aisha Abdulsalam',
         'customer@valenti.com',
         '+44 20 7946 0912',
         '14 Kensington High Street',

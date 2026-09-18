@@ -28,19 +28,13 @@ if %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
-:: Free port 8000 if a previous instance is still holding it
-for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8000 ^| findstr LISTENING 2^>nul') do (
-    echo  [*] Reclaiming port 8000 from stale process PID %%a...
-    taskkill /F /PID %%a >nul 2>&1
-)
-
 echo  [✓] Running Database Auto-Setup & Asset Verification...
 %PHP_BIN% "%~dp0database\seed.php"
 
 echo.
 echo ================================================================
 echo  SERVER READY!
-echo  Storefront URL:      http://localhost:8000/
+echo  Storefront URL:      http://localhost:8000
 echo  Admin Portal:        http://localhost:8000/admin/index.php
 echo.
 echo  DEMO CREDENTIALS:
@@ -49,13 +43,12 @@ echo  - Patron Access:     customer@valenti.com  /  customer123
 echo  - Discount Voucher:  SEN803 (20%% Academic Discount)
 echo ================================================================
 echo.
-echo Launching http://localhost:8000/ in your default browser...
+echo Launching your default browser in 2 seconds...
 timeout /t 2 >nul
-start http://localhost:8000/
+start http://localhost:8000/index.php
 
 echo Press Ctrl+C to terminate the local server when finished.
 echo.
 %PHP_BIN% -S localhost:8000 -t "%~dp0"
 pause
-
 

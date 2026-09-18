@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valenti Atelier — SEN 803 10-Minute Presentation Deck</title>
+  <style>
+    :root {
+      --bg: #0b1320;
+      --card-bg: rgba(18, 29, 49, 0.85);
+      --card-border: rgba(197, 168, 128, 0.25);
+      --gold: #c5a880;
+      --gold-light: #e5d4be;
+      --navy: #0f294a;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --green: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background: radial-gradient(circle at top right, #16243b, #070d17);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    /* Top Presentation Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 28px;
+      background: rgba(11, 19, 32, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand h1 {
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .brand span {
+      font-size: 12px;
+      color: var(--text-muted);
+      border-left: 1px solid var(--card-border);
+      padding-left: 10px;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: #0b1320;
+      border-color: var(--gold);
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: #0b1320;
+      font-weight: 600;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    /* Progress Bar */
+    .progress-track {
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+
+    /* Slide Stage */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    .slide-container {
+      width: 100%;
+      max-width: 1050px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      padding: 44px 54px;
+      position: relative;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .slide-badge {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .slide-timer {
+      position: absolute;
+      top: 24px;
+      right: 34px;
+      font-size: 13px;
+      background: rgba(255,255,255,0.06);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+    .slide-title {
+      font-size: 28px;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      color: #fff;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .slide-content {
+      flex: 1;
+    }
+    .slide-content ul {
+      list-style: none;
+    }
+    .slide-content li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 16px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+    .slide-content li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-size: 14px;
+    }
+    .highlight-card {
+      background: rgba(255,255,255,0.03);
+      border-left: 4px solid var(--gold);
+      padding: 14px 20px;
+      border-radius: 4px;
+      margin: 18px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--gold-light);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 14px;
+    }
+    .mini-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .mini-card h4 {
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    .mini-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Speaker Notes Drawer */
+    .notes-drawer {
+      margin-top: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed var(--gold);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #cbd5e1;
+      display: none;
+    }
+    .notes-drawer.open {
+      display: block;
+    }
+    .notes-title {
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .notes-text {
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    /* Footer Nav */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 30px;
+      background: rgba(11, 19, 32, 0.9);
+      border-top: 1px solid var(--card-border);
+    }
+    .nav-keys-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    kbd {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>VALENTI ATELIER</h1>
+      <span>SEN 803 Software Technology Course Defense</span>
+    </div>
+    <div class="controls">
+      <button class="btn" id="toggleNotesBtn">🎙 Toggle Speaker Script</button>
+      <a href="http://localhost:8000/" target="_blank" class="btn btn-gold">🚀 Open Live Portal (Port 8000)</a>
+      <button class="btn" id="fullScreenBtn">⛶ Fullscreen</button>
+    </div>
+  </header>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <main>
+    <div class="slide-container" id="slideStage">
+      <!-- Injected via JavaScript -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="nav-keys-hint">
+      Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> or <kbd>Space</kbd> to navigate slides. Press <kbd>S</kbd> to toggle speaker script.
+    </div>
+    <div class="controls">
+      <button class="btn" id="prevBtn">&larr; Previous</button>
+      <span id="slideCounter" style="font-size: 13px; font-weight:600; color: var(--gold);">Slide 1 / 10</span>
+      <button class="btn btn-gold" id="nextBtn">Next &rarr;</button>
+    </div>
+  </footer>
+
+  <script>
+    const slidesData = [
+      {
+        badge: "Slide 1 • Title & Overview",
+        time: "0:00 – 0:35",
+        title: "VALENTI ATELIER — B2C Luxury Apparel Portal",
+        content: `
+          <div class="highlight-card">
+            <strong>SEN 803 Software Technology: Course Project Defense</strong><br>
+            Prototype Business Portal Development & Business Plan Evaluation (60 + 30 + 10 Marks)
+          </div>
+          <ul>
+            <li><strong>Candidate:</strong> Sulaiman Adamu Ahmad</li>
+            <li><strong>Business Model:</strong> Direct-to-Consumer (B2C) Luxury Apparel & Digital Retailing</li>
+            <li><strong>Core Research Thesis:</strong> Demonstrating how software architecture creates strategic business value and consumer advantage in modern luxury retail.</li>
+            <li><strong>Key Technological Pillars:</strong> Native PHP 8.2, Dual-driver PDO (MySQL & SQLite fallback), Automated Algorithmic Voucher Engine, 4-Stage Logistics Tracker, and Executive Operations Back-Office.</li>
+          </ul>
+        `,
+        script: "Good morning esteemed examiners. Today, I present Valenti Atelier—a bespoke direct-to-consumer luxury fashion house and digital retailing portal developed for SEN 803 Software Technology. In this presentation, I will illustrate how strategic software architecture eliminates intermediate markups, creates frictionless consumer experiences, and drives measurable business value, followed by a live demonstration of our published prototype running locally on port 8000."
+      },
+      {
+        badge: "Slide 2 • Business Opportunity",
+        time: "0:35 – 1:15",
+        title: "The Market Problem vs. The B2C Solution",
+        content: `
+          <div class="grid-2">
+            <div class="mini-card">
+              <h4>Traditional Wholesale Model (Broken)</h4>
+              <p>• Multi-tiered intermediaries (wholesalers, agents, boutiques).<br>
+                 • Compounding markups exceeding 500% to 600%.<br>
+                 • Opaque inventory visibility and stockouts.<br>
+                 • Zero direct consumer relationship or post-purchase engagement.</p>
+            </div>
+            <div class="mini-card" style="border-color: var(--gold);">
+              <h4 style="color: var(--gold);">Valenti Atelier B2C Model (Engineered)</h4>
+              <p>• Pure-play digital portal connecting manufacturing directly to clients.<br>
+                 • Accessible luxury pricing (£120 - £500) preserving 65-70% gross margins.<br>
+                 • Real-time stock transparency on every product page.<br>
+                 • Direct patron relationship with lifetime order tracking and clienteling.</p>
+            </div>
+          </div>
+          <div class="highlight-card" style="margin-top: 18px;">
+            <strong>The Value Multiplier:</strong> A coat costing £145 to produce retails for £480 at Valenti Atelier (delivering 69.8% margin), whereas legacy department stores retail comparable pieces for £1,200+.
+          </div>
+        `,
+        script: "Historically, luxury fashion has been crippled by inefficient supply chains. A coat costing £120 to manufacture ends up priced at £1,200 in department stores due to distributor markups and boutique real estate overheads. Valenti Atelier dismantles this archaic structure. By deploying a proprietary B2C e-commerce portal, we offer identical Savile Row-grade pieces at £350 to £500, capturing a superior 65% gross margin while offering unrivaled consumer value."
+      },
+      {
+        badge: "Slide 3 • SEN 803 Table 1 Alignment",
+        time: "1:15 – 2:00",
+        title: "IT Value Creation Framework (Table 1: Online Shop)",
+        content: `
+          <ul>
+            <li><strong>Digital Merchandising & Retailing:</strong> Dynamic catalog with multi-facet filtering (Category, Gender, Size, Price) and real-time inventory scarcity counters.</li>
+            <li><strong>Frictionless Transaction Engine:</strong> Asynchronous cart modification, automated promotional engine (SEN803 20% discount), and simulated multi-rail payment checkout.</li>
+            <li><strong>Logistics Transparency & CRM:</strong> Automated official invoicing and interactive 4-stage visual dispatch timeline (Order Placed &rarr; Boxed &rarr; Dispatched &rarr; Delivered).</li>
+            <li><strong>Executive Back-Office Intelligence:</strong> Live aggregate KPI dashboard (Gross Revenue, Active Inventory, Processed Orders) and automated low-stock warnings (&lt;5 units).</li>
+          </ul>
+        `,
+        script: "In strict accordance with Table 1 of the SEN 803 brief—Online Shop Operations—our portal leverages IT across four critical pillars. First, digital merchandising with multi-faceted filtering and real-time stock counters. Second, an automated conversion engine featuring our custom voucher rules including our SEN803 course discount. Third, consumer trust through an interactive 4-stage logistics dispatch tracker. And fourth, an administrative back-office providing live KPI intelligence and inventory controls."
+      },
+      {
+        badge: "Slide 4 • Software Engineering",
+        time: "2:00 – 2:45",
+        title: "System Architecture: 3-Tier Enterprise Pattern",
+        content: `
+          <div class="grid-2">
+            <div class="mini-card">
+              <h4>1. Presentation Layer (Client)</h4>
+              <p>• Semantic HTML5 & Vanilla JavaScript<br>
+                 • Custom CSS3 Design System with Glassmorphism<br>
+                 • Zero heavy third-party framework overhead<br>
+                 • Lightning-fast sub-200ms page load times</p>
+            </div>
+            <div class="mini-card">
+              <h4>2. Application Logic Layer (Backend)</h4>
+              <p>• Native PHP 8.2 runtime engine<br>
+                 • Session security & CSRF token authentication<br>
+                 • Role-Based Access Control (RBAC: Admin vs. Patron)<br>
+                 • Real-time shopping bag & voucher calculation engine</p>
+            </div>
+          </div>
+          <div class="mini-card" style="margin-top: 14px; border-color: var(--accent-blue);">
+            <h4 style="color: var(--accent-blue);">3. Data Persistence Layer (Database)</h4>
+            <p>• <strong>Dual-Driver PDO Architecture:</strong> Connects to production MySQL (XAMPP 3306) with seamless, automatic fallback to embedded SQLite (<code>valenti_atelier.db</code>).<br>
+               • <strong>Auto-Seeding & Self-Migration:</strong> Guaranteed zero-configuration portability on examiner evaluation machines.</p>
+          </div>
+        `,
+        script: "Our software architecture follows an industry-standard 3-tier design. At the front, we eliminated bloated client frameworks in favor of optimized semantic HTML5 and CSS3, achieving sub-200ms page load times. The backend is powered by native PHP 8.2 with rigorous session security. And for our database, we implemented a dual-driver PDO architecture that runs seamlessly on XAMPP MySQL, but also includes an automatic SQLite fallback with auto-seeding for flawless examiner portability."
+      },
+      {
+        badge: "Slide 5 • Data Model & Security",
+        time: "2:45 – 3:30",
+        title: "Relational Data Model & Cybersecurity Engineering",
+        content: `
+          <ul>
+            <li><strong>Relational Schema (3NF):</strong> 7 normalized entities: <code>users</code>, <code>categories</code>, <code>products</code>, <code>orders</code>, <code>order_items</code>, <code>coupons</code>, and <code>reviews</code>.</li>
+            <li><strong>SQL Injection Defense:</strong> 100% prepared PDO statements with parameterized input bindings throughout all data layers.</li>
+            <li><strong>Cryptographic Password Security:</strong> Bcrypt hashing via <code>PASSWORD_BCRYPT</code> with automatic salting.</li>
+            <li><strong>Cross-Site Request Forgery (CSRF):</strong> Session-bound cryptographic tokens protecting state-modifying actions.</li>
+            <li><strong>Cross-Site Scripting (XSS) Mitigation:</strong> All dynamic browser output escaped via <code>htmlspecialchars(..., ENT_QUOTES, 'UTF-8')</code>.</li>
+          </ul>
+        `,
+        script: "Security and data integrity were engineered into every layer. Our database is strictly normalized into seven relational tables. All database queries use prepared statements with parameterized inputs, providing complete immunity against SQL injection. User passwords are encrypted with BCrypt hashing, administrative endpoints are protected by Role-Based Access Controls, and state-modifying requests require cryptographically validated CSRF tokens."
+      },
+      {
+        badge: "Slide 6 • Live Demo Setup",
+        time: "3:30 – 4:30",
+        title: "Transition to Live Prototype Demonstration",
+        content: `
+          <div class="highlight-card">
+            <strong>Published Local Server Environment:</strong> <code>http://localhost:8000/</code><br>
+            Launched seamlessly via automated Windows script (<code>run.bat</code> / <code>run_portal.bat</code>).
+          </div>
+          <ul>
+            <li><strong>Demo Persona 1 (Consumer/Patron):</strong> <code>customer@valenti.com</code> | <code>customer123</code></li>
+            <li><strong>Demo Persona 2 (Administrator):</strong> <code>admin@valenti.com</code> | <code>admin123</code></li>
+            <li><strong>Voucher Code for Live Test:</strong> <code>SEN803</code> (20% Academic Course Discount)</li>
+          </ul>
+          <div class="grid-2" style="margin-top: 14px;">
+            <div class="mini-card">
+              <h4>Storefront Demo Walkthrough</h4>
+              <p>1. Catalog Facet Filtering<br>2. Garment Details & Stock Warning<br>3. Add to Bag & Apply Voucher SEN803<br>4. Multi-Method Checkout & Order Tracking</p>
+            </div>
+            <div class="mini-card">
+              <h4>Back-Office Admin Walkthrough</h4>
+              <p>1. Executive KPI Sales Dashboard<br>2. Automated Low-Stock Alert Engine<br>3. Product Catalog CRUD Management<br>4. Order Dispatch Status Updater</p>
+            </div>
+          </div>
+        `,
+        script: "At this juncture, as required by Section 4(c) of our project brief, I will now switch to our live published prototype running on our local server at localhost:8000 to demonstrate the end-to-end consumer shopping journey and back-office administrative workflows."
+      },
+      {
+        badge: "Slide 7 • Live Demo Walkthrough",
+        time: "4:30 – 7:30",
+        title: "LIVE DEMONSTRATION: Step-by-Step Flow",
+        content: `
+          <div class="highlight-card" style="border-left-color: var(--green);">
+            <strong>🟢 PORTAL IS LIVE ON:</strong> <a href="http://localhost:8000/" target="_blank" style="color: var(--green); font-weight:700;">http://localhost:8000/</a>
+          </div>
+          <ol style="padding-left: 20px; line-height: 1.8; font-size: 15px; color: #e2e8f0;">
+            <li><strong>Browse Catalog:</strong> Filter by "Outerwear" &rarr; Show high-resolution editorial aesthetics.</li>
+            <li><strong>Inspect Garment:</strong> Open "The Savile Cashmere Overcoat" &rarr; Show size selector, low stock counter ("Only 4 left!"), and verified reviews.</li>
+            <li><strong>Cart & Voucher Engine:</strong> Add to bag &rarr; Enter <code>SEN803</code> &rarr; Point out instant 20% discount deduction (£96.00 off).</li>
+            <li><strong>Checkout Simulation:</strong> Enter address &rarr; Select "Credit / Debit Card" &rarr; Click Place Order.</li>
+            <li><strong>Order Tracking Timeline:</strong> Highlight generated Order Invoice & interactive 4-stage visual fulfillment tracker.</li>
+            <li><strong>Admin Back-Office:</strong> Open <code>/admin/index.php</code> (admin@valenti.com) &rarr; Highlight updated Gross Revenue KPIs and Inventory CRUD.</li>
+          </ol>
+        `,
+        script: "Here on our homepage, you observe the refined light editorial styling. Navigating to our Collection page, our faceted filter allows patrons to isolate garments by department, size, or price. Selecting the Savile Cashmere Overcoat, you see our dynamic stock counter showing scarcity. Adding this to our bag and proceeding to cart, I will now input our course promotional code: S-E-N-8-0-3. Instantly, our algorithmic pricing engine recalculates the subtotal, deducting 20% while maintaining full tax compliance. Completing checkout with simulated card payment brings us to our official invoice and our interactive 4-stage tracking timeline. Now, switching over to our Operations Console at /admin, executive managers immediately see updated Gross Sales KPIs, low-stock alerts, and full garment inventory management controls."
+      },
+      {
+        badge: "Slide 8 • Financial Viability",
+        time: "7:30 – 8:15",
+        title: "Financial Model, Pricing & Unit Economics",
+        content: `
+          <div class="grid-2">
+            <div class="mini-card">
+              <h4>Unit Margin Economics</h4>
+              <p>• <strong>The Savile Overcoat:</strong> Cost: £145 | Retail: £480 | Margin: <strong>£335 (69.8%)</strong><br>
+                 • <strong>Double-Breasted Blazer:</strong> Cost: £85 | Retail: £295 | Margin: <strong>£210 (71.2%)</strong><br>
+                 • <strong>Mulberry Silk Slip:</strong> Cost: £70 | Retail: £240 | Margin: <strong>£170 (70.8%)</strong></p>
+            </div>
+            <div class="mini-card">
+              <h4>3-Year Forecast Highlights</h4>
+              <p>• <strong>Year 1:</strong> £672,000 GMV | £216,960 EBITDA (32.3% Net Margin)<br>
+                 • <strong>Year 2:</strong> £1,997,500 GMV | £794,275 EBITDA<br>
+                 • <strong>Year 3:</strong> £4,992,000 GMV | £2,183,400 EBITDA (43.7% Net Margin)</p>
+            </div>
+          </div>
+          <div class="highlight-card" style="margin-top: 14px;">
+            <strong>Promotional Voucher Viability:</strong> Even with voucher <code>SEN803</code> (20% off) applied on a £300 basket, the order produces £152.00 in gross margin (63.3%), making customer acquisition profitable on day one.
+          </div>
+        `,
+        script: "Turning to our financial model, our unit economics are exceptionally robust. Because we eliminate wholesale distribution intermediaries, our gross product margins remain above 68%. Furthermore, our promotional voucher architecture is economically sound: even with a 20% discount applied via voucher SEN803, our gross margin on an average basket remains over 63%, generating immediate cash flow while accelerating new customer acquisition."
+      },
+      {
+        badge: "Slide 9 • Risk & Scalability",
+        time: "8:15 – 9:00",
+        title: "Risk Assessment & Cloud Scalability Roadmap",
+        content: `
+          <ul>
+            <li><strong>Traffic Spikes / Flash Drops:</strong> Containerized Docker architecture orchestrated across AWS ECS with auto-scaling groups.</li>
+            <li><strong>Global Latency:</strong> Image asset distribution via Cloudflare Edge CDN with Brotli compression and image WebP caching.</li>
+            <li><strong>High-Concurrency Cart Sessions:</strong> In-memory session store caching via Redis cluster for sub-millisecond cart transactions.</li>
+            <li><strong>Regulatory Compliance:</strong> GDPR-compliant customer data privacy, explicit cookie management, and PCI-DSS tokenized payment readiness.</li>
+          </ul>
+        `,
+        script: "To ensure long-term viability, we conducted a rigorous risk assessment. High-traffic flash sales and seasonal capsule drops are mitigated through a clear scalability roadmap: containerizing our application with Docker, offloading image assets to Cloudflare Edge CDN, and integrating Redis in-memory caching. Additionally, the platform adheres to GDPR data privacy regulations with secure session management and patron consent mechanisms."
+      },
+      {
+        badge: "Slide 10 • Conclusion",
+        time: "9:00 – 10:00",
+        title: "Conclusion & Examination Defense Summary",
+        content: `
+          <div class="highlight-card" style="border-left-color: var(--gold);">
+            <strong>Full Course Compliance (SEN 803):</strong><br>
+            ✓ Business Plan Report Submitted in Word Format (.docx) — 30 Marks Component<br>
+            ✓ Fully Developed Prototype Business Portal — 60 Marks Component<br>
+            ✓ 10-Minute Presentation & Local Server Demonstration Completed — 10% Component
+          </div>
+          <ul>
+            <li><strong>Proven IT Value:</strong> Demonstrated real-time merchandising, automated voucher discount economics, logistics transparency, and executive intelligence.</li>
+            <li><strong>Production Grade:</strong> Clean, portable, secure architecture with dual-driver database reliability.</li>
+            <li><strong>Ready for Questions:</strong> Thank you for your evaluation. I welcome your questions and discussion.</li>
+          </ul>
+        `,
+        script: "In conclusion, Valenti Atelier provides a complete, academically rigorous, and commercially viable demonstration of how software technology transforms B2C commerce. We have satisfied all requirements of the SEN 803 brief: delivering the business plan report, developing and publishing the local prototype portal, and illustrating its strategic value. Thank you very much for your time, and I am now ready for your questions and examination discussion."
+      }
+    ];
+
+    let currentSlide = 0;
+    const stage = document.getElementById('slideStage');
+    const counter = document.getElementById('slideCounter');
+    const progressFill = document.getElementById('progressFill');
+    const notesBtn = document.getElementById('toggleNotesBtn');
+    let showNotes = false;
+
+    function renderSlide(idx) {
+      const s = slidesData[idx];
+      stage.innerHTML = `
+        <div>
+          <span class="slide-badge">${s.badge}</span>
+          <span class="slide-timer">⏱ ${s.time}</span>
+          <h2 class="slide-title">${s.title}</h2>
+          <div class="slide-content">${s.content}</div>
+        </div>
+        <div class="notes-drawer ${showNotes ? 'open' : ''}" id="notesDrawer">
+          <div class="notes-title">🎙 Speaker Script / Talking Points:</div>
+          <div class="notes-text">"${s.script}"</div>
+        </div>
+      `;
+      counter.innerText = `Slide ${idx + 1} / ${slidesData.length}`;
+      progressFill.style.width = `${((idx + 1) / slidesData.length) * 100}%`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slidesData.length - 1) {
+        currentSlide++;
+        renderSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide(currentSlide);
+      }
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    notesBtn.addEventListener('click', () => {
+      showNotes = !showNotes;
+      const drawer = document.getElementById('notesDrawer');
+      if (drawer) drawer.classList.toggle('open', showNotes);
+    });
+
+    document.getElementById('fullScreenBtn').addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key.toLowerCase() === 's') {
+        notesBtn.click();
+      }
+    });
+
+    renderSlide(currentSlide);
+  </script>
+</body>
+</html>

@@ -149,7 +149,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Full Name *</label>
-              <input type="text" name="customer_name" required value="<?php echo htmlspecialchars($userProfile['name'] ?? ''); ?>" placeholder="e.g. Sulaiman A. Ahmad" class="form-control">
+              <input type="text" name="customer_name" required value="<?php echo htmlspecialchars($userProfile['name'] ?? ''); ?>" placeholder="e.g. Aisha Abdulsalam" class="form-control">
             </div>
             <div class="form-group">
               <label class="form-label">Email Address *</label>
